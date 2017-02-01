@@ -39,21 +39,6 @@ $( document ).ready(function() {
 	var max_y = 200;
 	var filled_areas = new Array();
 
-	$('.circle li').each(function() {
-	    var rand_x=0;
-	    var rand_y=0;
-	    var area;
-	    do {
-	        rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
-	        rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));
-	        area = {x: rand_x, y: rand_y, width: $(this).width(), height: $(this).height()};
-	    } while(check_overlap(area));
-	    
-	    filled_areas.push(area);
-	    
-	    $(this).css({left:rand_x, top: rand_y});
-	});
-
 	function check_overlap(area) {
 	    for (var i = 0; i < filled_areas.length; i++) {
 	        
@@ -74,4 +59,21 @@ $( document ).ready(function() {
 	    }
 	    return false;
 	}
+
+	$('.dots li').each(function() {
+	    var rand_x=0;
+	    var rand_y=0;
+	    var area;
+	    do {
+	        rand_x = Math.round(min_x + ((max_x - min_x)*(Math.random() % 1)));
+	        rand_y = Math.round(min_y + ((max_y - min_y)*(Math.random() % 1)));
+	        area = {x: rand_x, y: rand_y, width: $(this).width(), height: $(this).height()};
+	    } while(check_overlap(area));
+	    
+	    filled_areas.push(area);
+	    
+	    $(this).css({left:rand_x, top: rand_y});
+	});
+
+	
  });

@@ -239,6 +239,11 @@ body{
     
 }
 
+.circle .dots li:hover .term-title{
+    opacity:1;
+    
+}
+
 .circle .dots {
     opacity:0;
     transition:1000ms;
@@ -254,11 +259,6 @@ body{
 
 .circle.active .dots {
     opacity:1;
-}
-
-.dot.Eastern_White_Pine_2 {
-    margin-left:-10%;
-    margin-top:-10%;
 }
 
 li p {

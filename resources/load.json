@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "category": "fact",
+      "title": "Eastern White Pine",
+      "definition": "Eastern white pine (Pinus strobus) is tall with needles in clusters of five and cones without sharp points."
+    },
+    {
+      "category": "fact",
+      "title": "Loblolly Pine",
+      "definition": "Loblolly pine (Pinus taeda) has needles in clusters of three and cones with sharp, out-curved prickles."
+    }
+  ]
+}

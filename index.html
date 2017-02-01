@@ -92,11 +92,13 @@
             $( "#circle-outer-load .dots" ).load( "resources/load-1.html li.insight" );
         });
 
-        $( document ).ready(function() {
-        $( "li" ).click(function() {
-          $( this ).addClass( "active" );
-        });
- });
+        $(document).on('click', '.main-title', function() {
+        $( ".circle" ).removeClass( "active" );
+        $( ".circle" ).removeClass( "active-2" );
+        $( ".circle" ).removeClass( "active-3" );
+        $( "#right-word-list li" ).removeClass( "active" );
+    });
+
 
 
 

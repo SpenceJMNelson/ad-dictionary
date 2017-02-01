@@ -34,4 +34,11 @@ $( document ).ready(function() {
 
 
 
+
+
  });
+
+$(document).on('click', '.main-title', function() {
+    	$( ".circle" ).removeClass( "active" );
+    	$( "#right-word-list li" ).removeClass( "active" );
+	});

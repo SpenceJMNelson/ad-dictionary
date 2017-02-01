@@ -99,6 +99,26 @@ body{
     margin:0;
     font-family:monospace;
     transform:translate3d(0,0,0);
+    background:whitesmoke;
+    color:rgb(100,100,100);
+}
+
+.main-title {
+    font-weight: 100;
+    position:fixed;
+    top:0;
+    color:#ea532a;
+    z-index: 1000;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    padding:2em;
+}
+
+.main-title h1 {
+    font-size: 10px;
+    margin:0;
+    text-transform: uppercase;
+    letter-spacing: .1em
 }
 
 .word-wrapper-outer {
@@ -107,25 +127,85 @@ body{
     height:100vh;
     width:25vw;
     overflow:scroll;
-    background:whitesmoke;
+    
 }
 
 .word-wrapper-inner {
-    padding:1em;
+    padding:2em;
 }
 
 .word-wrapper-outer ol{
     padding:1em;
-    margin:0;
+    margin:3em 0 0 0;
 }
 
 .word-wrapper-outer li{
     font-size: 10px;
-    padding:0;
+    padding:.3em 0;
+    color:#ea532a;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.word-wrapper-outer li.active:before{
+    content:"";
+    padding:.3em;
+    font-size:8px;
+    text-transform:uppercase;
+    border:1px solid;
+    opacity:.4;
+}
+
+.word-wrapper-outer li.active.insight:before{
+    content:"insight";
+}
+
+.word-wrapper-outer li.active.fact:before{
+    content:"fact";
+}
+
+.word-wrapper-outer li.active.reverie:before{
+    content:"reverie";
+}
+
+.word-wrapper-outer li:hover{
+    transform: translateX(.6em);
 }
 
 .word-wrapper-outer li h2{
     font-size: inherit;
+}
+
+.word-wrapper-outer li span{
+    display:block;
+}
+
+.word-wrapper-outer li span.term-title{
+    font-weight: bold;
+    color:rgb(100,100,100);
+    transition: 300ms;
+}
+
+.word-wrapper-outer li:hover span.term-title{
+    color:rgb(30,30,30);
+}
+
+.word-wrapper-outer li span.term-definition{
+    color:rgb(100,100,100);
+    max-height: 0;
+    overflow: hidden;
+    opacity: .1;
+    transition:300ms opacity;
+}
+
+.word-wrapper-outer li.active span.term-definition{
+    color:rgb(100,100,100);
+    max-height: 900px;
+    opacity: 1
+}
+
+.word-wrapper-outer li.active span.term-title{
+    color:#ea532a;
 }
 
 .about {
@@ -137,9 +217,9 @@ body{
     top:0;
     right:0;
     height:100vh;
-    width:75vw;
-    overflow:scroll;
-    background:whitesmoke;
+    width:76vw;
+    overflow:hidden;
+   
 }
 
 .circle {
@@ -150,9 +230,10 @@ body{
     border-color: rgba(0,0,0,.3);
     left:50%;
     top:50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg);
     transition:1000ms;
-    background:whitesmoke;
+    filter: blur(3px);
+    
 }
 
 .circle .label {
@@ -166,6 +247,8 @@ body{
 
 .circle.active {
     border-color: rgba(0,0,0,1);
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+    filter: blur(0px);
 }
 
 .circle.active .label {
@@ -174,20 +257,24 @@ body{
 }
 
 .circle:hover{
-    transform: translateX(-50%) translateY(-50%) scale(1.05);
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(1.05);
+    filter: blur(1px);
+}
+
+.circle.active:hover{
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg) scale(1.05);
+    filter: blur(0px);
 }
 
 .circle.circle-outer {
     width:33vw;
     height:33vw;
-    border-style: dotted;
 }
 
 
 .circle.circle-outer.active {
     width:70vw;
     height:70vw;
-    border-style: dotted;
     border-color: transparent;
 }
 
@@ -235,10 +322,169 @@ body{
     position:absolute;
     left:50%;
     top:50%;
-    color:orange;
+    color:#ea532a;
+    display: block;
+    cursor: pointer;
+    z-index: 100;
+
     
 }
 
+
+
+.circle .dots li:before{
+    content:"•";
+    display: block;
+    position: absolute;
+    padding-right:1em;
+    margin-left:-1em;
+    margin-top:.1em;
+}
+
+.circle li:nth-child(0){
+    margin-top: 6%;
+    margin-left: -17%;
+}
+
+.circle li:nth-child(1){
+    margin-top: -26%;
+    margin-left: -22%;
+}
+
+.circle li:nth-child(2){
+    margin-top: 27%;
+    margin-left: -10%;
+}
+
+.circle li:nth-child(3){
+    margin-top: -27%;
+    margin-left: 15%;
+}
+
+.circle li:nth-child(4){
+    margin-top: 18%;
+    margin-left: 20%;
+}
+
+.circle li:nth-child(5){
+    margin-top: -19%;
+    margin-left: -12%;
+}
+
+.circle li:nth-child(6){
+    margin-top: 9%;
+    margin-left: 11%;
+}
+
+.circle li:nth-child(7){
+    margin-top: 20%;
+    margin-left: -29%;
+}
+
+.circle li:nth-child(8){
+    margin-top: -10%;
+    margin-left: -16%;
+}
+
+.circle li:nth-child(9){
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.circle li:nth-child(10){
+    margin-top: 11%;
+    margin-left: 4%;
+}
+
+.circle li:nth-child(11){
+    margin-top: 14%;
+    margin-left: 12%;
+}
+
+.circle li:nth-child(12){
+    margin-top: -22%;
+    margin-left: -10%;
+}
+
+.circle li:nth-child(13){
+    margin-top: -19%;
+    margin-left: 10%;
+}
+
+.circle li:nth-child(14){
+    margin-top: -6%;
+    margin-left: -21%;
+}
+
+.circle li:nth-child(15){
+    margin-top: 18%;
+    margin-left: 4%;
+}
+
+.circle li:nth-child(16){
+    margin-top: 9%;
+    margin-left: -5%;
+}
+
+.circle li:nth-child(17){
+    margin-top: 8%;
+    margin-left: -21%;
+}
+
+.circle li:nth-child(18){
+    margin-top: -9%;
+    margin-left: -19%;
+}
+
+.circle li:nth-child(19){
+    margin-top: -9%;
+    margin-left: -9%;
+}
+
+.circle li:nth-child(20){
+    margin-top: 9%;
+    margin-left: 9%;
+}
+
+.circle li:nth-child(20){
+    margin-top: 11%;
+    margin-left: 15%;
+}
+
+.circle li:nth-child(21){
+    margin-top: -20%;
+    margin-left: -6%;
+}
+
+.circle li:nth-child(22){
+    margin-top: -9%;
+    margin-left: -13%;
+}
+
+.circle li:nth-child(23){
+    margin-top: 11%;
+    margin-left: 5%;
+}
+
+.circle li:nth-child(24){
+    margin-top: -19%;
+    margin-left: 2%;
+}
+
+.circle li:nth-child(25){
+    margin-top: 20%;
+    margin-left: 6%;
+}
+
+.circle li:nth-child(26){
+    margin-top: -9%;
+    margin-left: -23%;
+}
+
+.circle li:nth-child(27){
+    margin-top: -13%;
+    margin-left: -28%;
+}
 
 
 .circle .dots {
@@ -257,11 +503,17 @@ body{
 
 .circle .dots li .term-title {
     opacity:0;
+    z-index: -1;
+    display: inline-block;
+    font-size: 8px;
+    transition:300ms;
+    transform: translateX(-10px);
 }
 
 
 .circle .dots li:hover .term-title{
     opacity:1;
+    transform: translateX(0px);
     
 }
 
@@ -276,7 +528,7 @@ a {
 }
 
 li.active{
-    color:orange!important;
+    color:#ea532a!important;
 }
 
 

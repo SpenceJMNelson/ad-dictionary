@@ -231,7 +231,7 @@ body{
 
 
 
-.circle .dot {
+.circle .dots li{
     position:absolute;
     left:50%;
     top:50%;
@@ -246,6 +246,10 @@ body{
 
 .circle .dots .term-definition {
     display:none;
+}
+
+.circle .dots .term-title {
+    opacity:0;
 }
 
 .circle.active .dots {

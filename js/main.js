@@ -2,6 +2,7 @@ $( document ).ready(function() {
 
 	$( ".circle-outer" ).click(function() {
 	  	$( ".circle" ).removeClass( "active" );
+	  	$( ".circle" ).removeClass( "active-2" );
 	  	$( "li" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "active-3" );
 	  	$( ".circle-outer" ).addClass( "active" );
@@ -35,10 +36,4 @@ $( document ).ready(function() {
 
 
 
-
  });
-
-$(document).on('click', '.main-title', function() {
-    	$( ".circle" ).removeClass( "active" );
-    	$( "#right-word-list li" ).removeClass( "active" );
-	});

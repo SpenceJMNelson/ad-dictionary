@@ -269,6 +269,7 @@ body{
     transform: translateX(-50%) translateY(-50%) rotateZ(-22deg);
     transition:1000ms;
     filter: blur(3px);
+    t
     
 }
 
@@ -302,54 +303,51 @@ body{
     filter: blur(0px);
 }
 
+
 .circle.circle-outer {
-    width:33vw;
-    height:33vw;
-}
-
-
-.circle.circle-outer.active {
     width:70vw;
     height:70vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.5);
+}
+
+.circle.circle-outer.active {
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg) scale(1);
     border-color: transparent;
 }
 
 .circle.circle-outer.active-2 {
-    width:60vw;
-    height:60vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.8);
 }
 
 .circle.circle-outer.active-3 {
-    width:35vw;
-    height:35vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.5);
 }
 
 
 
 .circle.circle-middle {
-    width:22vw;
-    height:22vw;
+    width:50vw;
+    height:50vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.45);
 }
 
 .circle.circle-middle.active-3 {
-    width:30vw;
-    height:30vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.6);
 }
 
 .circle.circle-middle.active {
-    width:50vw;
-    height:50vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg) scale(1);
 }
 
 
 .circle.circle-inner {
-    width:11vw;
-    height:11vw;
+    width:25vw;
+    height:25vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(-22deg) scale(.4);
 }
 
 .circle.circle-inner.active {
-    width:25vw;
-    height:25vw;
+    transform: translateX(-50%) translateY(-50%) rotateZ(0deg) scale(1);
 }
 
 

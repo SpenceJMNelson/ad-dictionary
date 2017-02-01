@@ -244,6 +244,10 @@ body{
     transition:1000ms;
 }
 
+.circle .dots .term-definition {
+    display:none;
+}
+
 .circle.active .dots {
     opacity:1;
 }

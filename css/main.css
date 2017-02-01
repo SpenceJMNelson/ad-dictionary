@@ -239,10 +239,7 @@ body{
     
 }
 
-.circle .dots li:hover .term-title{
-    opacity:1;
-    
-}
+
 
 .circle .dots {
     opacity:0;
@@ -253,12 +250,19 @@ body{
     display:none;
 }
 
-.circle .dots .term-title {
-    opacity:0;
-}
 
 .circle.active .dots {
     opacity:1;
+}
+
+.circle .dots li .term-title {
+    opacity:0;
+}
+
+
+.circle .dots li:hover .term-title{
+    opacity:1;
+    
 }
 
 li p {

@@ -39,7 +39,7 @@ $( document ).ready(function() {
 	var max_y = 200;
 	var filled_areas = new Array();
 
-	$('.circles li').each(function() {
+	$('.circle li').each(function() {
 	    var rand_x=0;
 	    var rand_y=0;
 	    var area;

@@ -2,6 +2,7 @@ $( document ).ready(function() {
 
 	$( ".circle-outer" ).click(function() {
 	  	$( ".circle" ).removeClass( "active" );
+	  	$( ".circle" ).removeClass( "initial" );
 	  	$( ".circle" ).removeClass( "active-2" );
 	  	$( "li" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "active-3" );
@@ -11,6 +12,7 @@ $( document ).ready(function() {
 
 	$( ".circle-middle" ).click(function() {
 	  	$( ".circle" ).removeClass( "active" );
+	  	$( ".circle" ).removeClass( "initial" );
 	  	$( "li" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "active-3" );
 	  	$( ".circle-middle" ).addClass( "active" );
@@ -20,6 +22,7 @@ $( document ).ready(function() {
 
 	$( ".circle-inner" ).click(function() {
 	  	$( ".circle" ).removeClass( "active" );
+	  	$( ".circle" ).removeClass( "initial" );
 	  	$( "li" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "active-2" );
 	  	$( ".circle-inner" ).addClass( "active" );

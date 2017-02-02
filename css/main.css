@@ -112,8 +112,8 @@ body{
     margin:0;
     font-family:monospace;
     transform:translate3d(0,0,0);
-    background:whitesmoke;
-    color:rgb(254, 255, 244);
+    background:rgb(254, 255, 244);
+    color:rgb(100,100,100);
 }
 
 .main-title {

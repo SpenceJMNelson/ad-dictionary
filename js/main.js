@@ -33,6 +33,10 @@ $( document ).ready(function() {
     	$( this ).toggleClass( "active" );
 	});
 
+	$(document).on('click', '.circle li', function() {
+    	$( this ).toggleClass( "modal" );
+	});
+
 
 
 

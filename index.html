@@ -20,7 +20,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-
+<div class="soundmessage"><p><span style="font-size:50%">&#9836;</span> turn on your sound.</p></div>
 
 <div class="modalscale">
 
@@ -198,6 +198,76 @@
         </div>
     </div>
 </div>
+
+<audio id="beep-one" controls preload="auto" style="opacity:0;">
+    <source src="resources/highding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-two" controls preload="auto" style="opacity:0;">
+    <source src="resources/mediumding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="beep-three" controls preload="auto" style="opacity:0;">
+    <source src="resources/lowding.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<audio id="ambient-sound" loop="loop" autoplay="autoplay" preload="auto">
+    <source src="resources/ambient-sound.mp3" controls></source>
+    Your browser isn't invited for super fun audio time.
+</audio>
+
+<script type="text/javascript">
+    
+
+$(".circle-outer")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-three")
+        .clone()
+        .attr("id", "beep-three" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-three", i);
+  })
+  .click(function() {
+    $("#beep-three" + $(this).data("beeper-three"))[0].play();
+  });
+$("#beep-three").attr("id", "beep-three0");
+
+$(".circle-middle")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-two")
+        .clone()
+        .attr("id", "beep-two" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-two", i);
+  })
+  .click(function() {
+    $("#beep-two" + $(this).data("beeper-two"))[0].play();
+  });
+$("#beep-two").attr("id", "beep-two0");
+
+$(".circle-inner")
+  .each(function(i) {
+    if (i != 0) { 
+      $("#beep-one")
+        .clone()
+        .attr("id", "beep-one" + i)
+        .appendTo($(this).parent()); 
+    }
+    $(this).data("beeper-one", i);
+  })
+  .click(function() {
+    $("#beep-one" + $(this).data("beeper-one"))[0].play();
+  });
+$("#beep-one").attr("id", "beep-one0");
+
+</script>
 
     </body>
 </html>

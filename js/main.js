@@ -61,10 +61,7 @@ $( document ).ready(function() {
     	$('.circle li[data-crosslink="' + crosslinkname + '"]').toggleClass( "modal" );
 	});
 
-
-
-
-
+	
 
 
  });

@@ -22,7 +22,7 @@ $( document ).ready(function() {
 
 	
 
-	$( ".circle-inner" ).click(function() {
+	$( ".circle-inner" ).click(100, function() {
 	  	$( ".circle" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "initial" );
 	  	$( "li" ).removeClass( "active" );
@@ -52,7 +52,7 @@ $( document ).ready(function() {
     	$( this ).toggleClass( "active" );
 	});
 
-	$(document).on('click', '.circle li', function() {
+	$(document).on('click', '.circle.active li', function() {
     	$( this ).toggleClass( "modal" );
 	});
 

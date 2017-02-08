@@ -485,6 +485,10 @@ body{
     
 }
 
+.circle li {
+    pointer-events: none;
+}
+
 .circle .label {
     opacity:0;
     position: absolute;
@@ -500,10 +504,16 @@ body{
     filter: blur(0px);
 }
 
+.circle.active li {
+    pointer-events: all;
+}
+
 .circle.active .label {
     opacity:1;
     transform: translateX(-50%) translateY(20px);
 }
+
+
 
 .circle.circle-outer {
     width:70vw;

@@ -20,6 +20,8 @@ $( document ).ready(function() {
 	  	$( ".fact" ).addClass( "active" );
 	});
 
+	
+
 	$( ".circle-inner" ).click(function() {
 	  	$( ".circle" ).removeClass( "active" );
 	  	$( ".circle" ).removeClass( "initial" );
@@ -32,6 +34,20 @@ $( document ).ready(function() {
 
 	});
 
+	$( ".about-link" ).click(function() {
+		$( ".about-window" ).fadeIn( 500, function() {
+		    $( ".about-window, .modalscale" ).toggleClass( "about-show" );
+		  });
+	});
+
+	$( ".about-window-close" ).click(function() {
+		$( ".about-window" ).fadeOut( 500, function() {
+		    $( ".about-window, .modalscale" ).toggleClass( "about-show" );
+		  });
+	});
+
+	
+
 	$(document).on('click', '#right-word-list li', function() {
     	$( this ).toggleClass( "active" );
 	});
@@ -39,6 +55,14 @@ $( document ).ready(function() {
 	$(document).on('click', '.circle li', function() {
     	$( this ).toggleClass( "modal" );
 	});
+
+	$(document).on('click', '.circle li.modal a', function() {
+		var crosslinkname = $(this).attr('href');
+    	$('.circle li[data-crosslink="' + crosslinkname + '"]').toggleClass( "modal" );
+	});
+
+
+
 
 
 
